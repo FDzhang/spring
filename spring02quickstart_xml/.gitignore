@@ -26,6 +26,5 @@ hs_err_pid*
 
 .gitignore
 .idea/
-pom.xml
 spring02quickstart_xml.iml
-src/
+target/
