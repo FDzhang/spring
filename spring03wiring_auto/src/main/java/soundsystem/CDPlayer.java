@@ -13,18 +13,23 @@ public class CDPlayer {
 
     private CompactDisc cd;
 
+    private Power power;
+
     public CDPlayer() {
         super();
         System.out.println("CDPlayer无参构造");
     }
 
     @Autowired
-    public CDPlayer(CompactDisc cd) {
+    public CDPlayer(CompactDisc cd, Power power) {
         this.cd = cd;
-        System.out.println("CDPlayer的有参构造函数");
+        this.power = power;
+        System.out.println("CDPlayer 多参数构造函数");
     }
 
+
     public void play(){
+        power.supply();
         cd.play();
     }
 
