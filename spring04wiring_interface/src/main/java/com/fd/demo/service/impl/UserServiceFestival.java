@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-@Qualifier("festival")
 public class UserServiceFestival implements UserService {
     public void add() {
         System.out.println("注册用户，发送优惠券");

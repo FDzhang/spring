@@ -8,8 +8,7 @@ import org.springframework.stereotype.Component;
  * @author ：zxq
  * @date ：Created in 2019/8/20 9:32
  */
-@Component
-@Qualifier("normal")
+@Component("normal")
 public class UserServiceNormal implements UserService {
 
 
