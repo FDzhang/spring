@@ -2,6 +2,7 @@ package com.fd.demo.soundsystem;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author ：zxq
@@ -12,9 +13,9 @@ public class CompactDisc {
 
     private String title;
     private String artist;
-    private List<Music> tracks;
+    private Set<Music> tracks;
 
-    public CompactDisc(String title, String artist, List<Music> tracks) {
+    public CompactDisc(String title, String artist, Set<Music> tracks) {
         this.title = title;
         this.artist = artist;
         this.tracks = tracks;

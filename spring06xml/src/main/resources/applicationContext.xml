@@ -26,14 +26,17 @@
         <constructor-arg index="0" name="title" value="i do"/>
         <constructor-arg name="artist" value="mww" />
         <constructor-arg name="tracks">
-            <list>
+            <!--list和set  set会去掉重复-->
+            <set>
                 <!--<value>IU 1</value>-->
                 <!--<value>IU 2</value>-->
                 <!--<value>IU 3</value>-->
                 <ref bean="music1"/>
                 <ref bean="music2"/>
                 <ref bean="music3"/>
-            </list>
+                <ref bean="music3"/>
+
+            </set>
         </constructor-arg>
     </bean>
 
