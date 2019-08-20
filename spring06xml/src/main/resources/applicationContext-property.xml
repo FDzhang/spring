@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
@@ -7,14 +8,13 @@
         <property name="title" value="IU "/>
         <property name="duration" value="10000"/>
     </bean>
-    <bean id="music2" class="com.fd.demo.soundsystem.Music">
-        <property name="title" value="告白气球 "/>
-        <property name="duration" value="10000"/>
-    </bean>
+    <bean id="music2" class="com.fd.demo.soundsystem.Music"
+        p:title="告白气球"
+        p:duration="365"/>
 
-    <bean id="compaciDisc1" class="com.fd.demo.soundsystem.CompactDisc">
-        <property name="title" value="IU 专辑"/>
-        <property name="artist" value="IU"/>
+    <bean id="compaciDisc1" class="com.fd.demo.soundsystem.CompactDisc"
+        p:title="IU 专辑"
+        p:artist="IU">
         <property name="tracks">
             <array>
                 <ref bean="music1"/>
@@ -23,7 +23,6 @@
         </property>
     </bean>
 
-    <bean id="cdPlayer1" class="com.fd.demo.soundsystem.CDPlayer">
-        <property name="cd" ref="compaciDisc1"/>
-    </bean>
+    <bean id="cdPlayer1" class="com.fd.demo.soundsystem.CDPlayer"
+        p:cd-ref="compaciDisc1" />
 </beans>
