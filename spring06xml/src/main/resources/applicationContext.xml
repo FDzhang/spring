@@ -2,8 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <bean id="compactDisc1" class="com.fd.demo.soundsystem.CompactDisc"></bean>
-    <bean id="compactDisc2" class="com.fd.demo.soundsystem.CompactDisc"></bean>
+    <!--id 和 name 的区别
+        name 可以有多个别名
+        id 只能有一个
+    -->
+    <bean name="compactDisc1 compactDisc12" class="com.fd.demo.soundsystem.CompactDisc" />
+    <bean name="compactDisc2" class="com.fd.demo.soundsystem.CompactDisc" />
 
 </beans>

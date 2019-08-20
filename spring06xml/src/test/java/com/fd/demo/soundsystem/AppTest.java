@@ -19,7 +19,7 @@ public class AppTest {
     private CompactDisc compactDisc1;
 
     @Autowired
-    private CompactDisc compactDisc2;
+    private CompactDisc compactDisc12;
 
     @Autowired
     @Qualifier("compactDisc2")
@@ -28,7 +28,7 @@ public class AppTest {
     @Test
     public void test01(){
         compactDisc1.paly();
-        compactDisc2.paly();
+        compactDisc12.paly();
         compactDisc3.paly();
     }
 }
