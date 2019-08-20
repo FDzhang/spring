@@ -21,9 +21,8 @@ public class AppConfig {
     }
 
     @Bean
-    public UserService userServiceNormal(){
+    public UserService userServiceNormal(UserDao userDao){
         System.out.println("AppConfig  userServiceNormal");
-        UserDao userDao = userDaoNormal();
         return new UserServiceNormal(userDao);
     }
 
