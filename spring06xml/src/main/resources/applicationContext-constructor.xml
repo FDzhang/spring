@@ -26,35 +26,24 @@
         <constructor-arg index="0" name="title" value="i do"/>
         <constructor-arg name="artist" value="mww" />
         <constructor-arg name="tracks">
-            <!--list和set  set会去掉重复-->
-            <!--<map>-->
-                <!--&lt;!&ndash;<entry key="m1" value="IU "/>&ndash;&gt;-->
-                <!--<entry key="lzn1" value-ref="music1"/>-->
-                <!--<entry key="lzn2" value-ref="music2"/>-->
-                <!--<entry key="lzn3" value-ref="music3"/>-->
-
-            <!--</map>-->
             <array>
-                <!--<value>IU</value>-->
                 <ref bean="music1"/>
                 <ref bean="music2"/>
                 <ref bean="music3"/>
-
-
             </array>
         </constructor-arg>
     </bean>
 
 
-    <!--<bean id="compactDisc2" class="com.fd.demo.soundsystem.CompactDisc"-->
-          <!--c:title="龙卷风" c:artist="IU" />-->
+    <bean id="compactDisc2" class="com.fd.demo.soundsystem.CompactDisc"
+          c:title="龙卷风" c:artist="IU" />
 
-    <!--<bean id="cdPlayer1" class="com.fd.demo.soundsystem.CDPlayer">-->
-        <!--<constructor-arg ref="compactDisc1"/>-->
-    <!--</bean>-->
+    <bean id="cdPlayer1" class="com.fd.demo.soundsystem.CDPlayer">
+        <constructor-arg ref="compactDisc1"/>
+    </bean>
 
-    <!--<bean id="cdPlayer2" class="com.fd.demo.soundsystem.CDPlayer" c:cd-ref="compactDisc2">-->
-    <!--</bean>-->
-    <!--<bean id="cdPlayer3" class="com.fd.demo.soundsystem.CDPlayer" c:_0-ref="compactDisc2">-->
-    <!--</bean>-->
+    <bean id="cdPlayer2" class="com.fd.demo.soundsystem.CDPlayer" c:cd-ref="compactDisc2">
+    </bean>
+    <bean id="cdPlayer3" class="com.fd.demo.soundsystem.CDPlayer" c:_0-ref="compactDisc2">
+    </bean>
 </beans>

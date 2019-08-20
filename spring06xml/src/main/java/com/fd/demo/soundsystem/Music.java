@@ -11,6 +11,7 @@ public class Music {
 
     public Music() {
         super();
+        System.out.println("music 构造函数。。。");
     }
 
     public Music(String title, Integer duration) {
@@ -24,6 +25,7 @@ public class Music {
 
     public void setTitle(String title) {
         this.title = title;
+        System.out.println("---"+this.toString()+"---注入 title");
     }
 
     public Integer getDuration() {
@@ -32,5 +34,6 @@ public class Music {
 
     public void setDuration(Integer duration) {
         this.duration = duration;
+        System.out.println("---"+this.toString()+"---注入 duration");
     }
 }
