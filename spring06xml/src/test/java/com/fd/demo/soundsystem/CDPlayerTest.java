@@ -16,10 +16,22 @@ public class CDPlayerTest {
     @Autowired
     private CDPlayer cdPlayer1;
 
+    @Autowired
+    private CDPlayer cdPlayer2;
+
+    @Autowired
+    private CDPlayer cdPlayer3;
 
     @Test
     public void Test01(){
         cdPlayer1.play();
     }
-
+    @Test
+    public void Test02(){
+        cdPlayer2.play();
+    }
+    @Test
+    public void Test03(){
+        cdPlayer3.play();
+    }
 }

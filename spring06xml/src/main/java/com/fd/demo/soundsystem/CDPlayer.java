@@ -20,6 +20,7 @@ public class CDPlayer {
     }
 
     public void play(){
+        System.out.println("CDPlayer ..." + this.toString());
         cd.paly();
     }
 }
