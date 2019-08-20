@@ -33,15 +33,38 @@ public class CompactDisc {
         System.out.println("CompactDisc 有参构造函数...." + this.toString());
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+        System.out.println("---"+this.toString()+"---注入 title");
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+        System.out.println("---"+this.toString()+"---注入 artist");
+    }
+
+    public Music[] getTracks() {
+        return tracks;
+    }
+
+    public void setTracks(Music[] tracks) {
+        this.tracks = tracks;
+        System.out.println("---"+this.toString()+"---注入 tracks");
+
+    }
+
     public void paly() {
         System.out.println("播放CD音乐....." + this.toString() + "--" + this.title + " by " + this.artist);
         for (Music track : this.tracks) {
             System.out.println("音乐:"+track.getTitle()+",时长："+track.getDuration());
         }
-//        for (String key : this.tracks.keySet()) {
-//            System.out.println("key: " + key);
-//            Music music = this.tracks.get(key);
-//            System.out.println("音乐:"+music.getTitle()+",时长："+music.getDuration());
-//        }
     }
 }

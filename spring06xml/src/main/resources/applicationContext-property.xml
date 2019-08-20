@@ -12,4 +12,14 @@
         <property name="duration" value="10000"/>
     </bean>
 
+    <bean id="compaciDisc1" class="com.fd.demo.soundsystem.CompactDisc">
+        <property name="title" value="IU 专辑"/>
+        <property name="artist" value="IU"/>
+        <property name="tracks">
+            <array>
+                <ref bean="music1"/>
+                <ref bean="music2"/>
+            </array>
+        </property>
+    </bean>
 </beans>
