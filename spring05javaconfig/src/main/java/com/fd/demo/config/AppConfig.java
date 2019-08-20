@@ -2,6 +2,8 @@ package com.fd.demo.config;
 
 import com.fd.demo.dao.UserDao;
 import com.fd.demo.dao.UserDaoNormal;
+import com.fd.demo.service.UserService;
+import com.fd.demo.service.UserServiceNormal;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,4 +19,12 @@ public class AppConfig {
         System.out.println("AppConfig  userDaoNormal");
         return new UserDaoNormal();
     }
+
+    @Bean
+    public UserService userServiceNormal(){
+        System.out.println("AppConfig  userServiceNormal");
+        UserDao userDao = userDaoNormal();
+        return new UserServiceNormal(userDao);
+    }
+
 }
