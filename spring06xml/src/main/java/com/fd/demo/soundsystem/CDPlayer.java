@@ -19,6 +19,16 @@ public class CDPlayer {
         System.out.println("CDPlayer 有参构造函数 ---" + this.toString());
     }
 
+    public CompactDisc getCd() {
+        return cd;
+    }
+
+    public void setCd(CompactDisc cd) {
+        this.cd = cd;
+        System.out.println("---"+this.toString()+"---注入 cd");
+
+    }
+
     public void play(){
         System.out.println("CDPlayer ..." + this.toString());
         cd.paly();

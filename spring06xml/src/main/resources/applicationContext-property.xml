@@ -22,4 +22,8 @@
             </array>
         </property>
     </bean>
+
+    <bean id="cdPlayer1" class="com.fd.demo.soundsystem.CDPlayer">
+        <property name="cd" ref="compaciDisc1"/>
+    </bean>
 </beans>
