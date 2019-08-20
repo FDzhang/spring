@@ -12,8 +12,13 @@ public class NotepadTest {
 
 
     /**
+     * scope="singleton"
      * 无论我们是否主动去获取bean对象，Spring上下文一加载就会创建bean对象
-     * 无论获取多少次，拿到的都是同意对象
+     * 无论获取多少次，拿到的都是同一个对象
+     *
+     * scope="prototype"
+     * Spring上下文加载不会创建bean对象
+     * 每次获取，拿到的都是不同的bean对象
      */
     @Test
     public void test01(){

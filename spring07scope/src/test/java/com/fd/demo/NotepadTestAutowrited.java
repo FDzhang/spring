@@ -21,11 +21,16 @@ public class NotepadTestAutowrited {
     private Notepad notepad2;
 
     /**
+     * scope="singleton"
      * 无论我们是否主动去获取bean对象，Spring上下文一加载就会创建bean对象
      * 无论【注入】多少次，拿到的都是同意对象
+     *
+     * scope="prototype"
+     * Spring上下文加载不会创建bean对象
+     * 每次【注入】，拿到的都是不同的bean对象
      */
     @Test
     public void test01(){
-        System.out.println(notepad1==notepad2);
+        //System.out.println(notepad1==notepad2);
     }
 }
