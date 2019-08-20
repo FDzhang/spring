@@ -6,5 +6,7 @@
 
     <context:component-scan base-package="com.fd.demo"/>
 
-    <bean id="notepad" class="com.fd.demo.Notepad" scope="singleton" lazy-init="true"/>
+    <bean id="notepad" class="com.fd.demo.Notepad" scope="singleton" lazy-init="true"
+        init-method="init"
+        destroy-method="destroy"/>
 </beans>

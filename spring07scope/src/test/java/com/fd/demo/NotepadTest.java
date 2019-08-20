@@ -26,5 +26,8 @@ public class NotepadTest {
         Object notepad1 = (Notepad)context.getBean("notepad");
 //        Object notepad2 = (Notepad)context.getBean("notepad");
 //        System.out.println(notepad1==notepad2);
+//        context.destroy();
+        context.close();
     }
+
 }

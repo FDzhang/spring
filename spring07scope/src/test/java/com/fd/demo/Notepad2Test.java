@@ -14,9 +14,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration("classpath:applicationContext.xml")
 public class Notepad2Test {
 
-//    @Autowired
-//    private Notepad2 notepad1;
-//
+    @Autowired
+    private Notepad2 notepad1;
+
 //    @Autowired
 //    private Notepad2 notepad2;
 
