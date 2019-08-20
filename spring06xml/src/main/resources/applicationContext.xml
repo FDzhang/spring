@@ -8,14 +8,38 @@
         id 只能有一个
     -->
     <!--name和index 都是指定对应的注入参数-->
+
+    <bean id="music1" class="com.fd.demo.soundsystem.Music">
+        <constructor-arg value="IU" />
+        <constructor-arg value="10000" />
+    </bean>
+    <bean id="music2" class="com.fd.demo.soundsystem.Music">
+        <constructor-arg value="IU 2" />
+        <constructor-arg value="10000" />
+    </bean>
+    <bean id="music3" class="com.fd.demo.soundsystem.Music">
+        <constructor-arg value="IU 3" />
+        <constructor-arg value="10000" />
+    </bean>
+
     <bean id="compactDisc1" class="com.fd.demo.soundsystem.CompactDisc" >
         <constructor-arg index="0" name="title" value="i do"/>
         <constructor-arg name="artist" value="mww" />
+        <constructor-arg name="tracks">
+            <list>
+                <!--<value>IU 1</value>-->
+                <!--<value>IU 2</value>-->
+                <!--<value>IU 3</value>-->
+                <ref bean="music1"/>
+                <ref bean="music2"/>
+                <ref bean="music3"/>
+            </list>
+        </constructor-arg>
     </bean>
 
 
-    <bean id="compactDisc2" class="com.fd.demo.soundsystem.CompactDisc"
-          c:title="龙卷风" c:artist="IU" />
+    <!--<bean id="compactDisc2" class="com.fd.demo.soundsystem.CompactDisc"-->
+          <!--c:title="龙卷风" c:artist="IU" />-->
 
     <!--<bean id="cdPlayer1" class="com.fd.demo.soundsystem.CDPlayer">-->
         <!--<constructor-arg ref="compactDisc1"/>-->
