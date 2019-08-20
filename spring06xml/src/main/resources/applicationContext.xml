@@ -6,7 +6,12 @@
         name 可以有多个别名
         id 只能有一个
     -->
-    <bean name="compactDisc1 compactDisc12" class="com.fd.demo.soundsystem.CompactDisc" />
-    <bean name="compactDisc2" class="com.fd.demo.soundsystem.CompactDisc" />
+    <bean id="compactDisc1" class="com.fd.demo.soundsystem.CompactDisc" />
+    <bean id="compactDisc2" class="com.fd.demo.soundsystem.CompactDisc" />
+
+    <bean id="cdPlayer1" class="com.fd.demo.soundsystem.CDPlayer">
+        <constructor-arg ref="compactDisc1"/>
+    </bean>
+
 
 </beans>
