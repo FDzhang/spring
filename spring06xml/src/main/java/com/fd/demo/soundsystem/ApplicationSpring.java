@@ -13,7 +13,9 @@ public class ApplicationSpring {
         System.out.println("ApplicationSpring is running .....");
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        CompactDisc cd = context.getBean(CompactDisc.class);
-        cd.paly();
+        CompactDisc cd1 = (CompactDisc) context.getBean("compactDisc1");
+        CompactDisc cd2 = (CompactDisc) context.getBean("compactDisc2");
+        cd1.paly();
+        cd2.paly();
     }
 }
