@@ -1,5 +1,4 @@
-package com.fd.demo.soundsystem;
-
+import com.fd.demo.soundsystem.CompactDisc;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**

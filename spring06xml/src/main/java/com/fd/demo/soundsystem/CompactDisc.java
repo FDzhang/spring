@@ -13,9 +13,9 @@ public class CompactDisc {
 
     private String title;
     private String artist;
-    private Map<String,Music> tracks;
+    private Music[] tracks;
 
-    public CompactDisc(String title, String artist, Map<String,Music> tracks) {
+    public CompactDisc(String title, String artist, Music[] tracks) {
         this.title = title;
         this.artist = artist;
         this.tracks = tracks;
@@ -35,13 +35,13 @@ public class CompactDisc {
 
     public void paly() {
         System.out.println("播放CD音乐....." + this.toString() + "--" + this.title + " by " + this.artist);
-//        for (Music track : this.tracks) {
-//            System.out.println("音乐:"+track.getTitle()+",时长："+track.getDuration());
-//        }
-        for (String key : this.tracks.keySet()) {
-            System.out.println("key: " + key);
-            Music music = this.tracks.get(key);
-            System.out.println("音乐:"+music.getTitle()+",时长："+music.getDuration());
+        for (Music track : this.tracks) {
+            System.out.println("音乐:"+track.getTitle()+",时长："+track.getDuration());
         }
+//        for (String key : this.tracks.keySet()) {
+//            System.out.println("key: " + key);
+//            Music music = this.tracks.get(key);
+//            System.out.println("音乐:"+music.getTitle()+",时长："+music.getDuration());
+//        }
     }
 }
