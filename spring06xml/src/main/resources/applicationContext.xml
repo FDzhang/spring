@@ -7,15 +7,22 @@
         name 可以有多个别名
         id 只能有一个
     -->
-    <bean id="compactDisc1" class="com.fd.demo.soundsystem.CompactDisc" />
-    <bean id="compactDisc2" class="com.fd.demo.soundsystem.CompactDisc" />
-
-    <bean id="cdPlayer1" class="com.fd.demo.soundsystem.CDPlayer">
-        <constructor-arg ref="compactDisc1"/>
+    <!--name和index 都是指定对应的注入参数-->
+    <bean id="compactDisc1" class="com.fd.demo.soundsystem.CompactDisc" >
+        <constructor-arg index="0" name="title" value="i do"/>
+        <constructor-arg name="artist" value="mww" />
     </bean>
 
-    <bean id="cdPlayer2" class="com.fd.demo.soundsystem.CDPlayer" c:cd-ref="compactDisc2">
-    </bean>
-    <bean id="cdPlayer3" class="com.fd.demo.soundsystem.CDPlayer" c:_0-ref="compactDisc2">
-    </bean>
+
+    <bean id="compactDisc2" class="com.fd.demo.soundsystem.CompactDisc"
+          c:title="龙卷风" c:artist="IU" />
+
+    <!--<bean id="cdPlayer1" class="com.fd.demo.soundsystem.CDPlayer">-->
+        <!--<constructor-arg ref="compactDisc1"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="cdPlayer2" class="com.fd.demo.soundsystem.CDPlayer" c:cd-ref="compactDisc2">-->
+    <!--</bean>-->
+    <!--<bean id="cdPlayer3" class="com.fd.demo.soundsystem.CDPlayer" c:_0-ref="compactDisc2">-->
+    <!--</bean>-->
 </beans>

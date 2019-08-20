@@ -13,22 +13,22 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
-public class AppTest {
+public class CompactDiscTest {
 
     @Autowired
     private CompactDisc compactDisc1;
 
     @Autowired
-    private CompactDisc compactDisc12;
-
-    @Autowired
-    @Qualifier("compactDisc2")
-    private CompactDisc compactDisc3;
+    private CompactDisc compactDisc2;
+//
+//    @Autowired
+//    @Qualifier("compactDisc2")
+//    private CompactDisc compactDisc3;
 
     @Test
     public void test01(){
         compactDisc1.paly();
-        compactDisc12.paly();
-        compactDisc3.paly();
+        compactDisc2.paly();
+//        compactDisc3.paly();
     }
 }
