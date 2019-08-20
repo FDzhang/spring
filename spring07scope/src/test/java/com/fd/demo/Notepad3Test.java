@@ -14,14 +14,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(classes = AppConfig.class)
 public class Notepad3Test {
 
-    @Autowired
-    private Notepad3 notepad1;
-
-    @Autowired
-    private Notepad3 notepad2;
+//    @Autowired
+//    private Notepad3 notepad1;
+//
+//    @Autowired
+//    private Notepad3 notepad2;
 
     @Test
     public void test01(){
-        System.out.println(notepad1==notepad2);
+//        System.out.println(notepad1==notepad2);
     }
 }

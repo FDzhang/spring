@@ -1,6 +1,7 @@
 package com.fd.demo;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +12,8 @@ import org.springframework.stereotype.Component;
 @Component
 // @Scope("prototype")
 // @Scope(scopeName = "prototype")
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+@Lazy
 public class Notepad2 {
     public Notepad2() {
         super();

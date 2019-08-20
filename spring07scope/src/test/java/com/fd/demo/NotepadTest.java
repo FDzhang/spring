@@ -24,7 +24,7 @@ public class NotepadTest {
     public void test01(){
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         Object notepad1 = (Notepad)context.getBean("notepad");
-        Object notepad2 = (Notepad)context.getBean("notepad");
-        System.out.println(notepad1==notepad2);
+//        Object notepad2 = (Notepad)context.getBean("notepad");
+//        System.out.println(notepad1==notepad2);
     }
 }
