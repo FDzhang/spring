@@ -1,6 +1,11 @@
 import org.junit.Test;
+import redis.clients.jedis.HostAndPort;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisCluster;
 import redis.clients.jedis.JedisPool;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
 
@@ -53,4 +58,26 @@ public class Main {
         jedisPool.close();
     }
 
+    /**
+     * 以集群的方式操作redis
+     */
+    @Test
+    public void testJedisCluster() {
+        //创建一连接，JedisCluster对象,在系统中是单例存在
+        Set<HostAndPort> nodes = new HashSet<>();
+        nodes.add(new HostAndPort("192.168.159.128", 7001));
+        nodes.add(new HostAndPort("192.168.159.128", 7002));
+        nodes.add(new HostAndPort("192.168.159.128", 7003));
+        nodes.add(new HostAndPort("192.168.159.128", 7004));
+        nodes.add(new HostAndPort("192.168.159.128", 7005));
+        nodes.add(new HostAndPort("192.168.159.128", 7006));
+        // spring ioc[控制反转]
+        JedisCluster cluster = new JedisCluster(nodes);
+        //执行JedisCluster对象中的方法，方法和redis一一对应。
+        cluster.set("cluster-test", "my jedis cluster test");
+        String result = cluster.get("cluster-test");
+        System.out.println(result);
+        //程序结束时需要关闭JedisCluster对象
+        cluster.close();
+    }
 }
