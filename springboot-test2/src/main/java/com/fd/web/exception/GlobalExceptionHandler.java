@@ -13,21 +13,21 @@ import java.util.Map;
  *
  * 用于捕获全局异常
  */
-@ControllerAdvice
-public class GlobalExceptionHandler {
-
-    /**
-     *  处理异常方法
-     * @return Map
-     *
-     * 捕获运行时异常，返回json
-     */
-    @ExceptionHandler(RuntimeException.class)
-    @ResponseBody
-    public Map<String,Object> exceptionHandler(){
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("errorCode", "101");
-        map.put("errorMsg", "系統错误!");
-        return map;
-    }
-}
+//@ControllerAdvice
+//public class GlobalExceptionHandler {
+//
+//    /**
+//     *  处理异常方法
+//     * @return Map
+//     *
+//     * 捕获运行时异常，返回json
+//     */
+//    @ExceptionHandler(RuntimeException.class)
+//    @ResponseBody
+//    public Map<String,Object> exceptionHandler(){
+//        Map<String, Object> map = new HashMap<String, Object>(8);
+//        map.put("errorCode", "101");
+//        map.put("errorMsg", "系統错误!");
+//        return map;
+//    }
+//}

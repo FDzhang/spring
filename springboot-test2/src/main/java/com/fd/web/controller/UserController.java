@@ -1,6 +1,8 @@
 package com.fd.web.controller;
 
 import com.fd.model.User;
+import com.fd.service.IUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +28,15 @@ public class UserController {
         User user = new User("zxq","123");
         user.setId(id);
         return user;
+    }
+
+    @Autowired
+    private IUserService userService;
+    @RequestMapping("register")
+    @ResponseBody
+    public String register(String username,String password){
+        userService.register(username,password);
+        return "success";
     }
 
 }
