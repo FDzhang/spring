@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
  *
  */
 @EnableAutoConfiguration
-@ComponentScan(basePackages = {"com.fd.web.controller"})
+@ComponentScan(basePackages = {"com.fd.web"})
 public class App {
     public static void main( String[] args ) {
         SpringApplication.run(App.class,args);
