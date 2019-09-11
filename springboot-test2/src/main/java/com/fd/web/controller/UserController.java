@@ -5,6 +5,7 @@ import com.fd.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -39,4 +40,10 @@ public class UserController {
         return "success";
     }
 
+    @RequestMapping("find")
+    @ResponseBody
+    public User register(String username){
+        User user = userService.findByUsername(username);
+        return user;
+    }
 }
