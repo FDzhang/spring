@@ -1,10 +1,7 @@
-package com.fd.service.impl;
+package com.fd.service;
 
 import com.fd.mapper.UserMapper;
-import com.fd.model.User;
-import com.fd.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,20 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Transactional
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl  {
 
     @Autowired
     private UserMapper userMapper;
 
-    @Override
+
     public void register(String username, String password) {
         userMapper.save(username,password);
     }
-
-    @Override
-    public User findByUsername(String username) {
-        return userMapper.findByUsername(username);
-    }
-
-
 }

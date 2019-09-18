@@ -1,12 +1,7 @@
 package com.fd.web.controller;
 
-import com.fd.model.User;
-import com.fd.service.IUserService;
+import com.fd.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,31 +14,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("user")
 public class UserController {
 
-    /**
-     * 通过id查询用户信息
-     * @return String
-     */
-    @RequestMapping("{id}")
-    @ResponseBody
-    public User userInfo(@PathVariable("id") Integer id){
-        User user = new User("zxq","123");
-        user.setId(id);
-        return user;
-    }
-
     @Autowired
-    private IUserService userService;
+    private UserServiceImpl userService;
+
+
     @RequestMapping("register")
     @ResponseBody
     public String register(String username,String password){
+        //把数据保存到test1数据库
         userService.register(username,password);
         return "success";
     }
 
-    @RequestMapping("find")
-    @ResponseBody
-    public User register(String username){
-        User user = userService.findByUsername(username);
-        return user;
+    @RequestMapping("login")
+    public String login(String username,String password){
+        //model.addattribte(path,"test2")
+        return "user/list";
     }
 }

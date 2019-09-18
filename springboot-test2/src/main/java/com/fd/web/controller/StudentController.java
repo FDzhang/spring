@@ -32,7 +32,7 @@ public class StudentController {
         stuList.add(new Student(3,"lkx","female"));
 
         model.addAttribute("stuList",stuList);
-
+        // 找模版页面
         return "stu/list";
     }
 }
